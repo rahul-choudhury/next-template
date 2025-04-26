@@ -1,0 +1,10 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.autoSave": "off",
+  "editor.codeActionsOnSave": {
+    "source.removeUnusedImports": "explicit",
+    "source.organizeImports": "explicit"
+  }
+}
