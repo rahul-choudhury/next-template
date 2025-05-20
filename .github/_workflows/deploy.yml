@@ -15,6 +15,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # - name: Create .env file (buildtime)
+      #   run: |
+      #     cat << EOF > .env
+      #     SOME_SECRET_VALUE=${{ secrets.SOME_SECRET_VALUE }}
+      #     SOME_NOT_SO_SECRET_VALUE=${{ vars.SOME_NOT_SO_SECRET_VALUE }}
+      #     EOF
+
       - name: Log in to the Container registry
         uses: docker/login-action@v3
         with:
@@ -42,6 +49,13 @@ jobs:
           sparse-checkout: |
             docker-compose.yml
           sparse-checkout-cone-mode: false
+
+      # - name: Create .env file (runtime)
+      #   run: |
+      #     cat << EOF > .env
+      #     SOME_SECRET_VALUE=${{ secrets.SOME_SECRET_VALUE }}
+      #     SOME_NOT_SO_SECRET_VALUE=${{ vars.SOME_NOT_SO_SECRET_VALUE }}
+      #     EOF
 
       - name: Log in to the Container registry
         uses: docker/login-action@v3
