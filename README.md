@@ -1,40 +1,42 @@
-# Next.js Template with shadcn/ui
+# Next.js Template
 
-## Tech Stack
+A Next.js starter template that allows you to quickly get started with a new React project. It uses the following:
 
-- ⚡️ Next.js 15 with App Router
-- 🎨 shadcn/ui components
-- 📦 pnpm for package management
-- 🐳 Docker configuration
-- 🔄 GitHub Actions workflow (disabled by default)
-- 🛠 TypeScript support
-- 🎯 ESLint and Prettier configuration
+- **Next.js 15** - Latest Next.js with App Router and Turbopack
+- **React 19** - Latest React with TypeScript support
+- **TypeScript** - Full type safety with strict configuration
+- **shadcn/ui** - Beautiful, accessible components built on Radix UI
+- **Tailwind CSS v4** - Latest Tailwind with CSS variables
+- **Deployment Config** - Includes Dockerfile and Github Actions workflow for deployments
 
-## Installation
+## Getting Started
 
-### Prerequisites
-
-First, install pnpm globally:
+### Using create-next-app (Recommended)
 
 ```bash
-npm install -g pnpm
+pnpm create next-app@latest --example https://github.com/rahul-choudhury/next-template
 ```
 
-And, run the following command: (substitute your project name)
+### Using git clone
 
 ```bash
-npx create-next-app@latest your-project-name --example https://github.com/rahul-choudhury/next-template --use-pnpm
+git clone https://github.com/rahul-choudhury/next-template.git my-project
+cd my-project
+rm -rf .git
+pnpm install
+pnpm dev
 ```
 
-## GitHub Actions
+## Deployment
 
-The repository includes a GitHub Actions workflow that is disabled by default. To enable it:
+This template includes GitHub Actions workflow for deployment via Coolify. To set up deployments:
 
-1. Rename `.github/_workflows` to `.github/workflows`
-2. Push the changes to your repository
+1. First, install Coolify on your VPS by following the [Coolify installation guide](https://coolify.io/docs/installation)
+2. Add your Coolify variables as GitHub repository secrets. Follow the [Coolify GitHub Actions documentation](https://coolify.io/docs/knowledge-base/git/github/github-actions) for complete setup instructions
 
-The workflow includes Docker setup for building and deploying your application. To ensure the workflow works properly, set up a GitHub Actions runner on your server:
+## Customization
 
-1. Follow the [official GitHub documentation](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners) to configure a self-hosted runner
-2. Configure it as a service
-3. Make sure Docker and Docker Compose are installed
+1. **Update package.json** - Change name, description, and author
+2. **Configure Tailwind** - Modify design tokens in `app/globals.css`
+3. **Add components** - Use shadcn/ui CLI to add more components
+4. **Environment setup** - Add your environment variables as needed
