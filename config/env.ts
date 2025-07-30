@@ -1,5 +1,4 @@
 import * as z from "zod";
-import "dotenv/config";
 
 const createEnv = () => {
   const EnvSchema = z.object({
@@ -16,7 +15,7 @@ const createEnv = () => {
     throw new Error(
       `Invalid env provided.
   The following variables are missing or invalid:
-  ${Object.entries(parsedEnv.error.flatten().fieldErrors)
+  ${Object.entries(z.flattenError(parsedEnv.error))
     .map(([k, v]) => `- ${k}: ${v}`)
     .join("\n")}
   `,
