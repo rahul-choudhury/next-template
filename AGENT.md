@@ -5,12 +5,13 @@
 
 ## Code Policy
 
+- When creating a file, refer to the `README.md` for project structure
 - Use kebab case for file names
 - Prefer named exports over default exports
 - DO NOT add `import React from "react"` to the top of a new file. This is not needed for react versions >= 18
 - Use the `cn` util for writing conditional tailwind classes
 - Prefer using the `function` keyword when creating components/functions over arrow functions
-- ALWAYS destructure custom hooks (including query/mutation hooks)
+- ALWAYS destructure custom hooks
 - Only write high-value comments if at all. Avoid talking to the user through comments
 - DO NOT run the dev server command
 - Before creating any ui components, check for their existence in `@/components/ui`
