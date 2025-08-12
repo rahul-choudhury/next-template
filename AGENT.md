@@ -1,21 +1,20 @@
 ## Development Commands
 
-- `pnpm tsc --noEmit` - Run typecheck
+- `pnpm typecheck` - Run typecheck
 - `pnpm lint` - Run ESLint
 
 ## Code Policy
 
-- Use kebab case for file names.
-- Prefer named exports over default exports.
-- Use tailwind v4 for styling.
-- Use `import * as React from 'react'` (namespace import) pattern when importing react hooks. ALWAYS put this at the top of the file.
-- Before creating any new type definitions/interfaces, check the `@/types` directory.
-- Prefer using the `function` keyword when creating components/functions over arrow functions.
-- Only write high-value comments if at all. Avoid talking to the user through comments.
-- Before creating any ui components, check for their existence in `@/components/ui`. If not present, install it from shadcn/ui.
-- DO NOT run the dev server command.
-- DO NOT create handler functions that are one liners. Prefer to inline them.
-- ALWAYS prefer to create client boundaries as deep into the tree as you can.
+- Use kebab case for file names
+- Prefer named exports over default exports
+- DO NOT add `import React from "react"` to the top of a new file. This is not needed for react versions >= 18
+- Use the `cn` util for writing conditional tailwind classes
+- Prefer using the `function` keyword when creating components/functions over arrow functions
+- ALWAYS destructure custom hooks (including query/mutation hooks)
+- Only write high-value comments if at all. Avoid talking to the user through comments
+- DO NOT run the dev server command
+- Before creating any ui components, check for their existence in `@/components/ui`
+- Install new components from shadcn/ui (https://ui.shadcn.com/docs/components)
 
 ## JavaScript/Typescript (mirrored and adjusted from [gemini-cli](https://github.com/google-gemini/gemini-cli/blob/main/GEMINI.md#javascripttypescript))
 
