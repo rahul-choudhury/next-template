@@ -1,2 +1,3 @@
 pnpm-*.yaml
+*.md
 components/ui
