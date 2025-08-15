@@ -1,6 +1,6 @@
 {
   "permissions": {
-    "allow": ["Bash(pnpm run lint)", "Bash(pnpm tsc --noEmit)", "WebFetch"],
+    "allow": ["Bash(pnpm run lint)", "Bash(pnpm run typecheck)", "WebFetch"],
     "deny": ["Bash(pnpm run dev)"]
   }
 }

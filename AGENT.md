@@ -1,7 +1,7 @@
 ## Development Commands
 
-- `pnpm typecheck` - Run typecheck
-- `pnpm lint` - Run ESLint
+- `pnpm run typecheck` - Run typecheck
+- `pnpm run lint` - Run ESLint
 
 ## Code Policy
 
