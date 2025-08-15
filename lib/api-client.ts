@@ -1,5 +1,5 @@
 import { env } from "@/config/env";
-import { toast } from "sonner";
+import { notFound } from "next/navigation";
 
 type RequestOptions = {
   method?: string;
@@ -83,11 +83,12 @@ async function fetchApi<T>(
     next,
   });
 
+  if (method === "GET" && response.status === 404) {
+    notFound();
+  }
+
   if (!response.ok) {
     const message = (await response.json()).message || response.statusText;
-    if (typeof window !== "undefined") {
-      toast.error(message);
-    }
     throw new Error(message);
   }
 
